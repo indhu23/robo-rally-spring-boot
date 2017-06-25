@@ -24,10 +24,10 @@ public class GameInputController {
     public ResponseEntity<Void> startGame(@PathVariable String id,@RequestBody RoundActionInputWrapper input,@RequestHeader(value="Secret") String secret) {
         System.out.println("input: "+secret);
         if(secret.equals(container.getSecreValue())) {
-            return new ResponseEntity<Void>(HttpStatus.OK);
+            return new ResponseEntity<>(HttpStatus.OK);
         }
         else
-            return new ResponseEntity<Void>(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 }
 

@@ -26,6 +26,6 @@ public class GameMockServer {
     @PostMapping("/games/{id}/round/sendRegisters1")
     public ResponseEntity<Void> sendRegisterServer(){
         HttpHeaders headers = new HttpHeaders();
-        return new ResponseEntity<Void>(headers,HttpStatus.OK);
+        return new ResponseEntity<Void>(headers,HttpStatus.valueOf(204));
     }
 }
