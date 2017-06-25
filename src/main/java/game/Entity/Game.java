@@ -1,39 +1,37 @@
 package game.Entity;
 
 public class Game {
-    private int gameId;
-    private String gameName;
-    private String gameStatus;
-    public Game(){}
 
-    public Game(int gameId, String gameName, String gameStatus) {
-        this.gameId = gameId;
-        this.gameName = gameName;
-        this.gameStatus = gameStatus;
+    private String name;
+    private int maxRobotCount ;
+
+    /**
+     *
+     * @return  returns the game name
+     */
+    public String getName() {
+        return name;
     }
 
-    public String getGameName() {
-        return gameName;
+    /**
+     * game name set by player
+     * @param name game name received from player
+     */
+    public void setName(String name) {this.name = name;}
+
+    /**
+     *
+     * @return returns the max robot count
+     */
+    public int getMaxRobotCount() {
+        return maxRobotCount;
     }
 
-    public void setGameName(String gameName) {
-        this.gameName = gameName;
+    /**
+     *  sets the maxRobotCount
+     * @param maxRobotCount gets the maxRobotCount by player
+     */
+    public void setMaxRobotCount(int maxRobotCount) {
+        this.maxRobotCount = maxRobotCount;
     }
-
-    public String getGameStatus() {
-        return gameStatus;
-    }
-
-    public void setGameStatus(String gameStatus) {
-        this.gameStatus = gameStatus;
-    }
-
-    public int getGameId() {
-        return gameId;
-    }
-
-    public void setGameId(int gameId) {
-        this.gameId = gameId;
-    }
-
 }
