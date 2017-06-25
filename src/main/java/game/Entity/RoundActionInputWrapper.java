@@ -3,7 +3,7 @@ package game.Entity;
 import java.util.List;
 
 /**
- * Created by Indhu on 6/15/2017.
+ *  Wrapper for holding the details of robot positions and actions
  */
 public class RoundActionInputWrapper {
     private List<RobotPostionDetail> position;

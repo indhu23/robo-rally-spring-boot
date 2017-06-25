@@ -1,7 +1,7 @@
 package game.Entity;
 
 /**
- * Created by Anand on 6/15/2017.
+ * Holds the available starting positions
  */
 public class AvailableStartingPositions {
     private int x;

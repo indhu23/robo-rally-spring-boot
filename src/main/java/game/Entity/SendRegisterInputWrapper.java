@@ -3,7 +3,7 @@ package game.Entity;
 import java.util.List;
 
 /**
- * Created by Indhu on 6/11/2017.
+ * Holds the list of registers
  */
 public class SendRegisterInputWrapper {
     public SendRegisterInputWrapper(List<String> registers) {

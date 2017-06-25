@@ -1,7 +1,7 @@
 package game.Entity;
 
 /**
- * Created by Indhu on 6/15/2017.
+ * Contains details for the robot position
  */
 public class RobotPostionDetail {
     private String robot;

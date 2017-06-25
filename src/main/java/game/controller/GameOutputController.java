@@ -10,8 +10,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import java.util.List;
-
-
+/**
+ * <h1>Game output controller</h1>
+ * Client controller which contains all the
+ * client-server requests
+ *
+ */
 @RestController
 public class GameOutputController {
     @Autowired
@@ -23,10 +27,21 @@ public class GameOutputController {
     @Autowired
     private SecretContainer container;
 
+    /**
+     * This method is used to get the list available games from the server
+     * @return List<GameViewOutputWrapper> This returns list of games
+     */
     @GetMapping("/games/list")
     public List<GameViewOutputWrapper> getGameList() {
         return restTemplate.getForEntity(server.buildURI("/games/list1"),wrapper.class).getBody().getGames();
     }
+
+    /**
+     * This method is used to join the game with the given id
+     * @param id This is the id of the game
+     * @param joinGame This contains details of the joining client
+     * @return String This contains the status of the request
+     */
     @PostMapping("/games/{id}/join")
     public String joinGame(@PathVariable String id,@RequestBody GameJoinInputWrapper joinGame) {
         ResponseEntity<Void> input= restTemplate.postForEntity(server.buildURI("/games/"+id+"/join1"),joinGame,Void.class);
@@ -42,6 +57,13 @@ public class GameOutputController {
             default : return "Something went wrong";
         }
     }
+
+    /**
+     * This method is used to send the selected registers to the server
+     * @param id This is the id of the game
+     * @param register This contains list of selected registers
+     * @return String This contains the status of the request
+     */
     @PostMapping("/games/{id}/round/sendRegisters")
     public String sendRegisters(@PathVariable String id,@RequestBody SendRegisterInputWrapper register) {
         HttpHeaders headers = new HttpHeaders();
@@ -55,11 +77,22 @@ public class GameOutputController {
             default : return "Something went wrong";
         }
     }
+
+    /**
+     * This method is used to create a new game on the server
+     * @param game This contains the details of the client
+     * @return GameViewOutputWrapper This contains the details of the created game
+     */
     @PostMapping("/games/create")
     public GameViewOutputWrapper createGame(@RequestBody Game game ){
         return restTemplate.postForObject(server.buildURI("/games/create1"), game, GameViewOutputWrapper.class);
     }
 
+    /**
+     * This method is used to Inform the server that the client left the game.
+     * @param id This contains the id of the game
+     * @return ResponseEntity<String> This contains the status of the result
+     */
     @PostMapping("/games/{id}/leave")
     public ResponseEntity<String> leaveTheGame(@PathVariable(value="id") String id) {
 

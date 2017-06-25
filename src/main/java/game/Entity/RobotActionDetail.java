@@ -2,6 +2,10 @@ package game.Entity;
 
 import java.util.List;
 
+/**
+ * Contains details about the robot actions
+ */
+
 public class RobotActionDetail {
     private String playerId;
     private String action;

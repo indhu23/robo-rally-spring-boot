@@ -1,7 +1,7 @@
 package game.Entity;
 
 /**
- * Created by Anand on 6/15/2017.
+ * Holds the fiend values
  */
 public class Fields {
     private int x;

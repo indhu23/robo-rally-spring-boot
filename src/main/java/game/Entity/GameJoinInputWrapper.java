@@ -1,4 +1,7 @@
 package game.Entity;
+/**
+ * Wrapper model for game join service
+ */
 
 public class GameJoinInputWrapper {
     public GameJoinInputWrapper(){}

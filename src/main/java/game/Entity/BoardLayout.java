@@ -1,8 +1,7 @@
 package game.Entity;
 
-
 /**
- * Created by Anand on 6/15/2017.
+ * Holds the layout of the board
  */
 public class BoardLayout {
     Board board;
