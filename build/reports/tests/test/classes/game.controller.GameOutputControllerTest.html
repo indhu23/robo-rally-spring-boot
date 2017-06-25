@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class game.controller.GameOutputControllerTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class game.controller.GameOutputControllerTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/game.controller.html">game.controller</a> &gt; GameOutputControllerTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">3</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.349s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">getGameList</td>
+<td>0.031s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">joinGame</td>
+<td>0.303s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">sendRegister</td>
+<td>0.015s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2017-06-25 11:10:47.859  INFO 7480 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [game.controller.GameOutputControllerTest], using SpringBootContextLoader
+2017-06-25 11:10:47.864  INFO 7480 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [game.controller.GameOutputControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2017-06-25 11:10:47.866  INFO 7480 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [game.controller.GameOutputControllerTest]: GameOutputControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2017-06-25 11:10:48.013  INFO 7480 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration game.Application for test class game.controller.GameOutputControllerTest
+2017-06-25 11:10:48.044  INFO 7480 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-06-25 11:10:48.060  INFO 7480 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Could not instantiate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+2017-06-25 11:10:48.060  INFO 7480 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Could not instantiate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+2017-06-25 11:10:48.060  INFO 7480 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@553614af, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3d91a0c9, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@1a7cb100, org.springframework.test.context.support.DirtiesContextTestExecutionListener@b8f0d12, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6e79e3a0, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5ede814e, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@2155df24, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5241b181, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@73043c8a, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@59fa1755]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.5.3.RELEASE)
+
+2017-06-25 11:10:48.431  INFO 7480 --- [    Test worker] g.controller.GameOutputControllerTest    : Starting GameOutputControllerTest on Indhu-PC with PID 7480 (started by Indhu in C:\Users\Indhu\IdeaProjects\rr_group_v)
+2017-06-25 11:10:48.431  INFO 7480 --- [    Test worker] g.controller.GameOutputControllerTest    : No active profile set, falling back to default profiles: default
+2017-06-25 11:10:48.431  INFO 7480 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@508a1ee6: startup date [Sun Jun 25 11:10:48 CEST 2017]; root of context hierarchy
+2017-06-25 11:10:51.610  INFO 7480 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@508a1ee6: startup date [Sun Jun 25 11:10:48 CEST 2017]; root of context hierarchy
+2017-06-25 11:10:51.672  INFO 7480 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/games/{id}/join],methods=[POST]}&quot; onto public game.Entity.GameJoinOutputWrapper game.controller.GameOutputController.joinGame(java.lang.String,game.Entity.GameJoinInputWrapper)
+2017-06-25 11:10:51.672  INFO 7480 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/games/{id}/round/sendRegisters],methods=[POST]}&quot; onto public game.Entity.GameJoinOutputWrapper game.controller.GameOutputController.sendRegisters(java.lang.String,game.Entity.RoundActionInputWrapper)
+2017-06-25 11:10:51.672  INFO 7480 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/games/list],methods=[GET]}&quot; onto public java.util.List&lt;game.Entity.GameViewOutputWrapper&gt; game.controller.GameOutputController.getGameList()
+2017-06-25 11:10:51.687  INFO 7480 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/error]}&quot; onto public org.springframework.http.ResponseEntity&lt;java.util.Map&lt;java.lang.String, java.lang.Object&gt;&gt; org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-06-25 11:10:51.687  INFO 7480 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/error],produces=[text/html]}&quot; onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-06-25 11:10:51.797  INFO 7480 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-06-25 11:10:51.798  INFO 7480 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-06-25 11:10:51.916  INFO 7480 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-06-25 11:10:52.002  WARN 7480 --- [    Test worker] .t.AbstractTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2017-06-25 11:10:52.369  INFO 7480 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2017-06-25 11:10:52.369  INFO 7480 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2017-06-25 11:10:52.385  INFO 7480 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 16 ms
+2017-06-25 11:10:52.606  INFO 7480 --- [    Test worker] g.controller.GameOutputControllerTest    : Started GameOutputControllerTest in 4.496 seconds (JVM running for 20.771)
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 3.5</a> at Jun 25, 2017 11:10:53 AM</p>
+</div>
+</div>
+</body>
+</html>

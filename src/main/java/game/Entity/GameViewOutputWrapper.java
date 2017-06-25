@@ -1,0 +1,65 @@
+package game.Entity;
+
+/**
+ * Created by Indhu on 5/18/2017.
+ */
+public class GameViewOutputWrapper {
+
+    private String id;
+    private String name;
+    private int maxRobotCount;
+    private int currentRobotCount;
+
+    /**
+     * Empty constructor. Needed when incoming requests body data needs to be deserialized into an instance of {@link GameViewOutputWrapper}
+     */
+    public GameViewOutputWrapper() {
+    }
+
+    /**
+     * Constructor
+     *
+     * @param id                the id of the game
+     * @param name              the name of the game
+     * @param maxRobotCount     the maximum number of robots
+     * @param currentRobotCount the count of joined robots
+     */
+    public GameViewOutputWrapper(final String id, final String name, final int maxRobotCount, final int currentRobotCount) {
+        this.id = id;
+        this.name = name;
+        this.maxRobotCount = maxRobotCount;
+        this.currentRobotCount = currentRobotCount;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(final String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(final String name) {
+        this.name = name;
+    }
+
+    public int getMaxRobotCount() {
+        return maxRobotCount;
+    }
+
+    public void setMaxRobotCount(final int maxRobotCount) {
+        this.maxRobotCount = maxRobotCount;
+    }
+
+    public int getCurrentRobotCount() {
+        return currentRobotCount;
+    }
+
+    public void setCurrentRobotCount(final int currentRobotCount) {
+        this.currentRobotCount = currentRobotCount;
+    }
+}
