@@ -46,8 +46,6 @@ public class GameOutputController {
     }
     @PostMapping("/games/create")
     public GameViewOutputWrapper createGame(@RequestBody Game game ){
-        System.out.println("here");
-
         return restTemplate.postForObject(server.buildURI("/games/create1"), game, GameViewOutputWrapper.class);
     }
 

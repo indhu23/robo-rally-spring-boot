@@ -41,6 +41,7 @@ public class GameMockServer {
     @PostMapping("/games/{id}/leave1")
     public ResponseEntity<String> clientLeaveGame(@RequestBody String id) {
         String s= "the client left the game";
+        HttpHeaders headers = new HttpHeaders();
         return new ResponseEntity<>(s,HttpStatus.OK);
     }
 }
