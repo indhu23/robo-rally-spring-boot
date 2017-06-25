@@ -1,4 +1,4 @@
-package game.Entity;
+package game.entity;
 
 /**
  * Holds the layout of the board

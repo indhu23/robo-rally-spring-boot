@@ -1,11 +1,11 @@
-package game.Entity;
+package game.entity;
 
 import java.util.List;
 
 /**
  * Wrapper for holding list of games
  */
-public class wrapper {
+public class Wrapper {
 
     public List<GameViewOutputWrapper> getGames() {
         return games;

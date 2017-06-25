@@ -1,4 +1,4 @@
-package game.Entity;
+package game.entity;
 /**
  * Wrapper model for game join service
  */

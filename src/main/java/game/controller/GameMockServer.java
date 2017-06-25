@@ -1,7 +1,7 @@
 package game.controller;
 
-import game.Entity.Game;
-import game.Entity.GameViewOutputWrapper;
+import game.entity.Game;
+import game.entity.GameViewOutputWrapper;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
@@ -57,12 +57,11 @@ public class GameMockServer {
         gameViewOutputWrapper.setMaxRobotCount(game.getMaxRobotCount()+3);
         gameViewOutputWrapper.setCurrentRobotCount(0);
         gameViewOutputWrapper.setName(game.getName());
-        return new ResponseEntity<GameViewOutputWrapper>(gameViewOutputWrapper,HttpStatus.OK);
+        return new ResponseEntity<>(gameViewOutputWrapper,HttpStatus.OK);
     }
 
     /**
      * This method returns mock response for leave game service
-     * @param id contains id for the game
      * @return status
      */
     @PostMapping("/games/{id}/leave1")

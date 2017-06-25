@@ -1,7 +1,7 @@
 package game.controller;
 
 import game.Application;
-import game.Entity.*;
+import game.entity.*;
 import game.exception.IllegalAccessException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,34 +26,32 @@ public class GameInputController {
     @Autowired
     private SecretContainer container;
 
+    private String s="Secret doesn't match";
     /**
      * This method receives the actions of the activation phase from the server
-     * @param id This is the id of the game
      * @param input This contains the order of the robot actions in a particular round
      * @param secret This contains the secret key in he header for communication
      * @return status of the equest
      * @throws IllegalAccessException if there is a mismatch in the secret header value
      */
     @PostMapping("/games/{id}/round/actions")
-    public ResponseEntity<Void> roundAction(@PathVariable String id, @RequestBody RoundActionInputWrapper input, @RequestHeader(value = "Secret") String secret)throws IllegalAccessException{
-        System.out.println("input: " + secret);
+    public ResponseEntity<Void> roundAction( @RequestBody RoundActionInputWrapper input, @RequestHeader(value = "Secret") String secret)throws IllegalAccessException{
         if (secret.equals(container.getSecreValue())) {
-            return new ResponseEntity<Void>(HttpStatus.OK);
+            return new ResponseEntity<>(HttpStatus.OK);
         } else {
-            throw new IllegalAccessException("Secrets doesnt match");
+            throw new IllegalAccessException(s);
         }
      }
 
     /**
      * Inform all clients, that the game starts.It sends the board layout of the game.
-     * @param id This is the id of the game
      * @param boardLayout This is the board layout of the game
      * @param secret This contains the secret key in he header for communication
      * @return Selected robot and position
      * @throws IllegalAccessException if there is a mismatch in the secret header value
      */
     @PostMapping(value= "/games/{id}/start")
-    public RobotPositionClientRespond startGame(@RequestBody BoardLayout boardLayout, @PathVariable(value="id") String id,@RequestHeader(value="Secret") String secret) throws IllegalAccessException {
+    public RobotPositionClientRespond startGame(@RequestBody BoardLayout boardLayout,@RequestHeader(value="Secret") String secret) throws IllegalAccessException {
         RobotPositionClientRespond robotPositionClientRespond = new RobotPositionClientRespond();
         if(secret.equals(container.getSecreValue()))
         {
@@ -66,7 +64,7 @@ public class GameInputController {
             return robotPositionClientRespond;
         }
         else{
-            throw new IllegalAccessException("Secrets doesnt match");
+            throw new IllegalAccessException(s);
         }
     }
 
@@ -79,32 +77,31 @@ public class GameInputController {
      * @throws IllegalAccessException if there is a mismatch in the secret header value
      */
     @PostMapping(value="/games/{id}/round/start",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> startRound(@PathVariable (value="id") String id, @RequestBody Player player,@RequestHeader(value="Secret") String secret)throws IllegalAccessException
+    public ResponseEntity<Void> startRound( @RequestBody Player player,@RequestHeader(value="Secret") String secret)throws IllegalAccessException
     {
         if(secret.equals(container.getSecreValue())) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         else {
-            throw new IllegalAccessException("Secrets doesn't match");
+            throw new IllegalAccessException(s);
         }
 
     }
 
     /**
      * Informs all clients, that the all the rounds are over now.
-     * @param id This is the id of the game
      * @param secret This contains the secret key in he header for communication
      * @return status of the request
      * @throws IllegalAccessException if there is a mismatch in the secret header value
      */
     @PostMapping(value="/games/{id}/round/ends",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<HttpStatus>endRound(@PathVariable (value="id") String id,@RequestHeader(value="Secret") String secret)throws IllegalAccessException
+    public ResponseEntity<HttpStatus>endRound(@RequestHeader(value="Secret") String secret)throws IllegalAccessException
     {
         if(secret.equals(container.getSecreValue())) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         else {
-            throw new IllegalAccessException("Secrets doesn't match");
+            throw new IllegalAccessException(s);
         }
     }
 
@@ -112,39 +109,37 @@ public class GameInputController {
      * Server sends this timelimit warning if either a client has finished
      * programming the registers for this round or the server decides, that
      * it is time to finish the current round for some other reason.
-     * @param id This is the id of the game
      * @param timeLimitWarning Contains the details about the time limit
      * @param secret This contains the secret key in he header for communication
      * @return status of the request
      * @throws IllegalAccessException if there is a mismatch in the secret header value
      */
     @PostMapping(value = "/games/{id}/round/timeLimitWarning",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<HttpStatus> timeLimit(@PathVariable (value="id") String id, @RequestBody TimeLimitWarning timeLimitWarning,@RequestHeader(value="Secret") String secret)throws IllegalAccessException
+    public ResponseEntity<HttpStatus> timeLimit( @RequestBody TimeLimitWarning timeLimitWarning,@RequestHeader(value="Secret") String secret)throws IllegalAccessException
     {
         if(secret.equals(container.getSecreValue())) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         else {
-            throw new IllegalAccessException("Secrets doesnt match");
+            throw new IllegalAccessException(s);
         }
     }
 
     /**
      * Informs all clients that the game has ended and why it ended.
-     * @param id This is the id of the game
      * @param reason This contains the reason for ending the game
      * @param secret This contains the secret key in the header for communication
      * @return status of the request
      * @throws IllegalAccessException if there is a mismatch in the secret header value
      */
     @PostMapping(value = "/games/{id}/end")
-    public ResponseEntity<HttpStatus> endGame(@RequestBody String reason,@PathVariable(value = "id") String id,@RequestHeader(value="secret") String secret)throws IllegalAccessException
+    public ResponseEntity<HttpStatus> endGame(@RequestBody String reason,@RequestHeader(value="secret") String secret)throws IllegalAccessException
     {
         if(secret.equals(container.getSecreValue())) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         else {
-            throw new IllegalAccessException("Secrets doesn't match");
+            throw new IllegalAccessException(s);
         }
     }
 }

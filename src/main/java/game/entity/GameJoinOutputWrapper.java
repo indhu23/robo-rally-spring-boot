@@ -1,4 +1,4 @@
-package game.Entity;
+package game.entity;
 
 /**
  * Created by Indhu on 6/11/2017.

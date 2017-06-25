@@ -1,4 +1,4 @@
-package game.Entity;
+package game.entity;
 
 /**
  * Hold the details of the created game
