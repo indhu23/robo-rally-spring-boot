@@ -10,10 +10,9 @@ public class GameViewOutputWrapper {
     private int maxRobotCount;
     private int currentRobotCount;
 
-    /**
-     * Empty constructor. Needed when incoming requests body data needs to be deserialized into an instance of {@link GameViewOutputWrapper}
-     */
+
     public GameViewOutputWrapper() {
+        //Empty constructor
     }
 
     /**

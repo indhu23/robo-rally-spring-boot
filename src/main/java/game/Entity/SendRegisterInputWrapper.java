@@ -6,6 +6,10 @@ import java.util.List;
  * Holds the list of registers
  */
 public class SendRegisterInputWrapper {
+    private List<String> registers;
+    public  SendRegisterInputWrapper(){
+        //Empty constructor
+    }
     public SendRegisterInputWrapper(List<String> registers) {
         this.registers = registers;
     }
@@ -18,5 +22,4 @@ public class SendRegisterInputWrapper {
         this.registers = registers;
     }
 
-    private List<String> registers;
 }

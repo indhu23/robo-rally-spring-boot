@@ -2,10 +2,10 @@ package game.controller;
 
 import game.Application;
 import game.Entity.*;
+import game.exception.IllegalAccessException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
@@ -43,18 +43,25 @@ public class GameOutputController {
      * @return String This contains the status of the request
      */
     @PostMapping("/games/{id}/join")
-    public String joinGame(@PathVariable String id,@RequestBody GameJoinInputWrapper joinGame) {
+    public String joinGame(@PathVariable String id,@RequestBody GameJoinInputWrapper joinGame) throws IllegalAccessException{
         ResponseEntity<Void> input= restTemplate.postForEntity(server.buildURI("/games/"+id+"/join1"),joinGame,Void.class);
         String SecretHeader=input.getHeaders().containsKey("Secret")?input.getHeaders().getFirst("Secret"):"";
-        if(!SecretHeader.equals(null) || !SecretHeader.equals("")) {
+        if(SecretHeader !=null || SecretHeader == "") {
             container.setSecreValue(input.getHeaders().getFirst("Secret"));
-        }
-        int status= input.getStatusCodeValue();
-        switch (status){
-            case 200 : return "Successfully joined game";
-            case 404 : return "Game not found";
-            case 403 : return "Sorry , joining of the game failed";
-            default : return "Something went wrong";
+            System.out.println("value" + container.getSecreValue());
+            int status = input.getStatusCodeValue();
+            switch (status) {
+                case 200:
+                    return "Successfully joined game";
+                case 404:
+                    return "Game not found";
+                case 403:
+                    return "Sorry , joining of the game failed";
+                default:
+                    return "Something went wrong";
+            }
+        }else {
+            throw new IllegalAccessException("Secret key value not found");
         }
     }
 
@@ -68,7 +75,7 @@ public class GameOutputController {
     public String sendRegisters(@PathVariable String id,@RequestBody SendRegisterInputWrapper register) {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Secret", container.getSecreValue());
-        HttpEntity<SendRegisterInputWrapper> request = new HttpEntity<SendRegisterInputWrapper>(register, headers);
+        HttpEntity request = new HttpEntity(register, headers);
         ResponseEntity<Void> input= restTemplate.postForEntity(server.buildURI("/games/"+id+"/round/sendRegisters1"),request,Void.class);
         int status= input.getStatusCodeValue();
         switch (status){
@@ -99,8 +106,7 @@ public class GameOutputController {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.add("Secret",container.getSecreValue());
         HttpEntity httpEntity=new HttpEntity(httpHeaders);
-        ResponseEntity<Void> responseEntity=restTemplate.postForEntity(server.buildURI("/games/"+id+"/leave1"),httpEntity,Void.class);
-        return responseEntity;
+        return restTemplate.postForEntity(server.buildURI("/games/"+id+"/leave1"),httpEntity,Void.class);
     }
 
 }

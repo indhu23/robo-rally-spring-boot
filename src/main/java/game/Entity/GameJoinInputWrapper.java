@@ -4,14 +4,17 @@ package game.Entity;
  */
 
 public class GameJoinInputWrapper {
-    public GameJoinInputWrapper(){}
+    private String playerName;
+    private String clientRestBaseUrl;
+
+    public GameJoinInputWrapper(){
+        //Default constructor
+    }
+
     public GameJoinInputWrapper(String playerName, String clientRestBaseUrl) {
         this.playerName = playerName;
         this.clientRestBaseUrl = clientRestBaseUrl;
     }
-
-    private String playerName;
-    private String clientRestBaseUrl;
 
     public String getPlayerName() {
         return playerName;

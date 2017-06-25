@@ -14,6 +14,8 @@ public class RoundActionInputWrapper {
     private List<RobotActionDetail> actions2;
     private List<RobotPostionDetail> positions3;
     private List<RobotActionDetail> actions3;
+    private List<RobotPostionDetail> positions4;
+    private List<RobotActionDetail> actions4;
 
 
     public List<RobotPostionDetail> getPositions0() {
@@ -96,8 +98,6 @@ public class RoundActionInputWrapper {
         this.actions4 = actions4;
     }
 
-    private List<RobotPostionDetail> positions4;
-    private List<RobotActionDetail> actions4;
 
 
 
