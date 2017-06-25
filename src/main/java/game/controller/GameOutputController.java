@@ -9,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
-
 import java.util.List;
 
 
@@ -29,20 +28,32 @@ public class GameOutputController {
         return restTemplate.getForEntity(server.buildURI("/games/list1"),wrapper.class).getBody().getGames();
     }
     @PostMapping("/games/{id}/join")
-    public GameJoinOutputWrapper joinGame(@PathVariable String id,@RequestBody GameJoinInputWrapper joinGame) {
+    public String joinGame(@PathVariable String id,@RequestBody GameJoinInputWrapper joinGame) {
         ResponseEntity<Void> input= restTemplate.postForEntity(server.buildURI("/games/"+id+"/join1"),joinGame,Void.class);
-        container.setSecreValue(input.getHeaders().getFirst("Secret"));
-        return (new GameJoinOutputWrapper(input.getStatusCodeValue()));
+        String SecretHeader=input.getHeaders().containsKey("Secret")?input.getHeaders().getFirst("Secret"):"";
+        if(!SecretHeader.equals(null) || !SecretHeader.equals("")) {
+            container.setSecreValue(input.getHeaders().getFirst("Secret"));
+        }
+        int status= input.getStatusCodeValue();
+        switch (status){
+            case 200 : return "Successfully joined game";
+            case 404 : return "Game not found";
+            case 403 : return "Sorry , joining of the game failed";
+            default : return "Something went wrong";
+        }
     }
     @PostMapping("/games/{id}/round/sendRegisters")
-    public GameJoinOutputWrapper sendRegisters(@PathVariable String id,@RequestBody RoundActionInputWrapper register) {
-        //System.out.println("herer..:"+container.getSecreValue());
+    public String sendRegisters(@PathVariable String id,@RequestBody SendRegisterInputWrapper register) {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Secret", container.getSecreValue());
-        HttpEntity<RoundActionInputWrapper> request = new HttpEntity<RoundActionInputWrapper>(register, headers);
-        System.out.println("request"+request);
-        ResponseEntity<Void> input= restTemplate.postForEntity(server.buildURI("/games/"+id+"/join1"),request,Void.class);
-        return (new GameJoinOutputWrapper(input.getStatusCodeValue()));
+        HttpEntity<SendRegisterInputWrapper> request = new HttpEntity<SendRegisterInputWrapper>(register, headers);
+        ResponseEntity<Void> input= restTemplate.postForEntity(server.buildURI("/games/"+id+"/round/sendRegisters1"),request,Void.class);
+        int status= input.getStatusCodeValue();
+        switch (status){
+            case 204 : return "Successfully sent the registers";
+            case 422 : return "invalid registers! try sending again within the time limit";
+            default : return "Something went wrong";
+        }
     }
     @PostMapping("/games/create")
     public GameViewOutputWrapper createGame(@RequestBody Game game ){

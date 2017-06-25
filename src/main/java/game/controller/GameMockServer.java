@@ -22,12 +22,12 @@ public class GameMockServer {
     public ResponseEntity<Void> joinGameServer(){
         HttpHeaders headers = new HttpHeaders();
         headers.add("Secret", "secretValue");
-        return new ResponseEntity<Void>(headers,HttpStatus.valueOf(200));
+        return new ResponseEntity<>(headers,HttpStatus.valueOf(200));
     }
     @PostMapping("/games/{id}/round/sendRegisters1")
     public ResponseEntity<Void> sendRegisterServer(){
         HttpHeaders headers = new HttpHeaders();
-        return new ResponseEntity<Void>(headers,HttpStatus.OK);
+        return new ResponseEntity<>(headers,HttpStatus.valueOf(204));
     }
     @PostMapping("/games/create1")
     public GameViewOutputWrapper newGame(@RequestBody Game game) {
