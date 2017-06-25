@@ -11,8 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.web.client.ExpectedCount;
 import org.springframework.test.web.client.MockRestServiceServer;
 import org.springframework.web.client.RestTemplate;
 
@@ -22,8 +22,6 @@ import static org.junit.Assert.*;
 import static org.springframework.http.HttpMethod.GET;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.client.ExpectedCount.manyTimes;
-import static org.springframework.test.web.client.ExpectedCount.once;
-import static org.springframework.test.web.client.ExpectedCount.times;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.method;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.requestTo;
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withStatus;
@@ -82,10 +80,23 @@ public class GameOutputControllerTest {
 
     @Test
     public void createGame() throws Exception {
-        String responseBody="{\"id\": \"haam\",\"name\":\"hi\",\"maxRobotCount\":6,\"currentRobotCount\":1}";
-        mockRestServiceServer.expect(
-                requestTo("http://localhost:8080/games/1/round/sendRegisters1"))
-                .andExpect(method(HttpMethod.POST))
-                .andRespond(withSuccess(responseBody,APPLICATION_JSON));
+//        String responseBody="{\"id\": \"haam\",\"name\":\"hi\",\"maxRobotCount\":6,\"currentRobotCount\":1}";
+//        mockRestServiceServer.expect(
+//                requestTo("http://localhost:8080/games/1/round/sendRegisters1"))
+//                .andExpect(method(HttpMethod.POST))
+//                .andRespond(withSuccess(responseBody,APPLICATION_JSON));
     }
+
+    @Test
+    public void leaveTheGame() throws Exception {
+        mockRestServiceServer.expect(
+                requestTo("http://localhost:8080/games/1/leave1"))
+                .andExpect(method(HttpMethod.POST))
+                .andRespond(withStatus(HttpStatus.valueOf(200)));
+        ResponseEntity<String> output = controller.leaveTheGame("1");
+        assertEquals(200,output.getStatusCodeValue());
+        mockRestServiceServer.verify();
+    }
+
+
 }
