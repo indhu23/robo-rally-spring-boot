@@ -30,6 +30,7 @@ public class GameInputController {
      * This method receives the actions of the activation phase from the server
      * @param id This is the id of the game
      * @param input This contains the order of the robot actions in a particular round
+     * @param secret This contains the secret key in he header for communication
      * @return status of the equest
      * @throws IllegalAccessException if there is a mismatch in the secret header value
      */
@@ -37,32 +38,32 @@ public class GameInputController {
     public ResponseEntity<Void> startGame(@PathVariable String id, @RequestBody RoundActionInputWrapper input, @RequestHeader(value = "Secret") String secret)throws IllegalAccessException{
         if (secret.equals(container.getSecreValue())) {
             return new ResponseEntity<Void>(HttpStatus.OK);
-        } else
+        } else {
             throw new IllegalAccessException("Secrets doesnt match");
+        }
      }
 
     /**
      * Inform all clients, that the game starts.It sends the board layout of the game.
      * @param id This is the id of the game
      * @param boardLayout This is the board layout of the game
+     * @param secret This contains the secret key in he header for communication
      * @return Selected robot and position
      * @throws IllegalAccessException if there is a mismatch in the secret header value
      */
     @PostMapping(value= "/games/{id}/start")
     public ResponseEntity<RobotPositionClientRespond> startGame(@RequestBody BoardLayout boardLayout, @PathVariable(value="id") String id,@RequestHeader(value="Secret") String secret) throws IllegalAccessException {
         RobotPositionClientRespond robotPositionClientRespond = new RobotPositionClientRespond();
-        if(secret.equals(container.getSecreValue()))
-        {
-        AvailableStartingPositions availableStartingPositions = boardLayout.getAvailableStartingPositions()[0];
-        Position position = new Position();
-        position.setX(availableStartingPositions.getX());
-        position.setY(availableStartingPositions.getY());
-        robotPositionClientRespond.setRobot(boardLayout.getAvailableRobots()[0]);
-        robotPositionClientRespond.setPosition(position);
-        return new ResponseEntity<RobotPositionClientRespond>(robotPositionClientRespond,HttpStatus.OK);
-    }
-    else
-        {
+        if(secret.equals(container.getSecreValue())) {
+            AvailableStartingPositions availableStartingPositions = boardLayout.getAvailableStartingPositions()[0];
+            Position position = new Position();
+            position.setX(availableStartingPositions.getX());
+            position.setY(availableStartingPositions.getY());
+            robotPositionClientRespond.setRobot(boardLayout.getAvailableRobots()[0]);
+            robotPositionClientRespond.setPosition(position);
+            return new ResponseEntity<RobotPositionClientRespond>(robotPositionClientRespond,HttpStatus.OK);
+        }
+        else {
             throw new IllegalAccessException("Secrets doesnt match");
         }
     }
@@ -71,6 +72,7 @@ public class GameInputController {
      * Inform all clients, that the next round is about to start.
      * @param id This is the id of the game
      * @param player This is the current board state and drawpile
+     * @param secret This contains the secret key in he header for communication
      * @return status of the request
      * @throws IllegalAccessException if there is a mismatch in the secret header value
      */
@@ -80,7 +82,7 @@ public class GameInputController {
         if(secret.equals(container.getSecreValue())) {
             return new ResponseEntity<>(HttpStatus.valueOf(204));
         }
-        else{
+        else {
             throw new IllegalAccessException("Secrets doesn't match");
         }
 
@@ -89,6 +91,7 @@ public class GameInputController {
     /**
      * Informs all clients, that the all the rounds are over now.
      * @param id This is the id of the game
+     * @param secret This contains the secret key in he header for communication
      * @return status of the request
      * @throws IllegalAccessException if there is a mismatch in the secret header value
      */
@@ -99,8 +102,7 @@ public class GameInputController {
             String s="the round has ended";
             return new ResponseEntity<>(s,HttpStatus.OK);
         }
-        else
-        {
+        else {
             throw new IllegalAccessException("Secrets doesn't match");
         }
     }
@@ -110,6 +112,8 @@ public class GameInputController {
      * programming the registers for this round or the server decides, that
      * it is time to finish the current round for some other reason.
      * @param id This is the id of the game
+     * @param timeLimitWarning Contains the details about the time limit
+     * @param secret This contains the secret key in he header for communication
      * @return status of the request
      * @throws IllegalAccessException if there is a mismatch in the secret header value
      */
@@ -120,8 +124,7 @@ public class GameInputController {
             String s="got your time limit warning of" + timeLimitWarning.getSecondsLeft();
             return new ResponseEntity<>(s,HttpStatus.OK);
         }
-        else
-        {
+        else {
             throw new IllegalAccessException("Secrets doesnt match");
         }
     }
@@ -129,7 +132,8 @@ public class GameInputController {
     /**
      * Informs all clients that the game has ended and why it ended.
      * @param id This is the id of the game
-     * @param reason This contains the reason for nding the game
+     * @param reason This contains the reason for ending the game
+     * @param secret This contains the secret key in the header for communication
      * @return status of the request
      * @throws IllegalAccessException if there is a mismatch in the secret header value
      */
@@ -139,11 +143,10 @@ public class GameInputController {
         if(secret.equals(container.getSecreValue())) {
             return new ResponseEntity<>(HttpStatus.OK);
         }
-        else
-        {
-            throw new IllegalAccessException("Secrets doesnt match");
-        }
+        else {
+            throw new IllegalAccessException("Secrets doesn't match");
         }
     }
+}
 
 

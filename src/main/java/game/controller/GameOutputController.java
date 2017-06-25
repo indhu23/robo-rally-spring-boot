@@ -29,7 +29,7 @@ public class GameOutputController {
 
     /**
      * This method is used to get the list available games from the server
-     * @return List<GameViewOutputWrapper> This returns list of games
+     * @return This returns list of games
      */
     @GetMapping("/games/list")
     public List<GameViewOutputWrapper> getGameList() {
@@ -91,7 +91,7 @@ public class GameOutputController {
     /**
      * This method is used to Inform the server that the client left the game.
      * @param id This contains the id of the game
-     * @return ResponseEntity<String> This contains the status of the result
+     * @return This contains the status of the result
      */
     @PostMapping("/games/{id}/leave")
     public ResponseEntity<String> leaveTheGame(@PathVariable(value="id") String id) {

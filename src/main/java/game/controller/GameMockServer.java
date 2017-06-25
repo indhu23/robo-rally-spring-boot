@@ -50,6 +50,7 @@ public class GameMockServer {
 
     /**
      * This method returns mock response for creat game service
+     * @param game contains details about the game
      * @return details of the created game
      */
     @PostMapping("/games/create1")
@@ -64,6 +65,7 @@ public class GameMockServer {
 
     /**
      * This method returns mock response for leave game service
+     * @param id contains id for the game
      * @return status
      */
     @PostMapping("/games/{id}/leave1")

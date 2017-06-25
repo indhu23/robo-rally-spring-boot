@@ -80,4 +80,12 @@ public class GameOutputControllerTest {
         mockRestServiceServer.verify();
     }
 
+    @Test
+    public void createGame() throws Exception {
+        String responseBody="{\"id\": \"haam\",\"name\":\"hi\",\"maxRobotCount\":6,\"currentRobotCount\":1}";
+        mockRestServiceServer.expect(
+                requestTo("http://localhost:8080/games/1/round/sendRegisters1"))
+                .andExpect(method(HttpMethod.POST))
+                .andRespond(withSuccess(responseBody,APPLICATION_JSON));
+    }
 }

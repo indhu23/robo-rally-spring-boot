@@ -13,7 +13,7 @@ public class Board {
 
     /**
      * set the size of the board (length*width)
-     * @param size
+     * @param size size of the board
      */
     public void setSize(Size size) {
         this.size = size;
@@ -29,7 +29,7 @@ public class Board {
 
     /**
      * set the description of all fields in the board
-     * @param fields
+     * @param fields fields of the board
      */
     public void setFields(Fields[] fields) {
         this.fields = fields;
