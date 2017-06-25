@@ -1,10 +1,6 @@
 package game.Entity;
 
 /**
- * Created by Anand on 6/15/2017.
- */
-
-/**
  * Lisr of all fields on the Game Board
  */
 public enum Field {

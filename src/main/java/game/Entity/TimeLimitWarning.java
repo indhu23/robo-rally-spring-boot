@@ -1,7 +1,7 @@
 package game.Entity;
 
 /**
- * Created by Anand on 6/5/2017.
+ * Holds the details of time limit warning
  */
 public class TimeLimitWarning {
 long secondsLeft;

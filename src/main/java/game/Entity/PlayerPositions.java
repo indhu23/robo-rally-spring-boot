@@ -1,7 +1,7 @@
 package game.Entity;
 
 /**
- * Created by Anand on 5/30/2017.
+ * Holds details about the player positions
  */
 public class PlayerPositions {
     Robot robot;

@@ -2,7 +2,7 @@ package game.Entity;
 
 
 /**
- * Created by Anand on 6/15/2017.
+ * Contains details about the Robot position and robots
  */
 public class RobotPositionClientRespond {
     private Robot robot;

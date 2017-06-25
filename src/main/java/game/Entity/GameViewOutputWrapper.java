@@ -1,7 +1,7 @@
 package game.Entity;
 
 /**
- * Created by Indhu on 5/18/2017.
+ * Hold the details of the created game
  */
 public class GameViewOutputWrapper {
 

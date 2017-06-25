@@ -3,7 +3,7 @@ package game.Entity;
 import java.util.List;
 
 /**
- * Created by Indhu on 6/14/2017.
+ * Wrapper for holding list of games
  */
 public class wrapper {
 

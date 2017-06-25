@@ -1,7 +1,7 @@
 package game.Entity;
 
 /**
- * Created by Indhu on 6/15/2017.
+ * Holds the position of the bots
  */
 public class Position {
 

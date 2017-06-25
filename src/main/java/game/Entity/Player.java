@@ -1,7 +1,7 @@
 package game.Entity;
 
 /**
- * Created by Anand on 6/3/2017.
+ * Holds the details of the players
  */
 public class Player {
 private PlayerPositions []playerPositions;
