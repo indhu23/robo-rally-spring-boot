@@ -2,10 +2,7 @@ package game.controller;
 
 import game.Entity.Game;
 import game.Entity.GameViewOutputWrapper;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
 
@@ -30,18 +27,16 @@ public class GameMockServer {
         return new ResponseEntity<>(headers,HttpStatus.valueOf(204));
     }
     @PostMapping("/games/create1")
-    public GameViewOutputWrapper newGame(@RequestBody Game game) {
+    public ResponseEntity<GameViewOutputWrapper> newGame(@RequestBody Game game) {
         GameViewOutputWrapper gameViewOutputWrapper=new GameViewOutputWrapper();
-        gameViewOutputWrapper.setId("dDSG");
-        gameViewOutputWrapper.setMaxRobotCount(5);
+        gameViewOutputWrapper.setId("ANCDEFR");
+        gameViewOutputWrapper.setMaxRobotCount(game.getMaxRobotCount()+3);
         gameViewOutputWrapper.setCurrentRobotCount(0);
-        gameViewOutputWrapper.setName("sdgvdf");
-        return gameViewOutputWrapper;
+        gameViewOutputWrapper.setName(game.getName());
+        return new ResponseEntity<GameViewOutputWrapper>(gameViewOutputWrapper,HttpStatus.OK);
     }
     @PostMapping("/games/{id}/leave1")
-    public ResponseEntity<String> clientLeaveGame(@RequestBody String id) {
-        String s= "the client left the game";
-        HttpHeaders headers = new HttpHeaders();
-        return new ResponseEntity<>(s,HttpStatus.OK);
+    public ResponseEntity<Void> clientLeaveGame() {
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
