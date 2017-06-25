@@ -84,8 +84,8 @@ public class GameOutputController {
      * @return GameViewOutputWrapper This contains the details of the created game
      */
     @PostMapping("/games/create")
-    public GameViewOutputWrapper createGame(@RequestBody Game game ){
-        return restTemplate.postForObject(server.buildURI("/games/create1"), game, GameViewOutputWrapper.class);
+    public ResponseEntity<GameViewOutputWrapper> createGame(@RequestBody Game game ){
+        return restTemplate.postForEntity(server.buildURI("/games/create1"), game,GameViewOutputWrapper.class);
     }
 
     /**
@@ -94,14 +94,13 @@ public class GameOutputController {
      * @return This contains the status of the result
      */
     @PostMapping("/games/{id}/leave")
-    public ResponseEntity<String> leaveTheGame(@PathVariable(value="id") String id) {
+    public ResponseEntity<Void> leaveTheGame(@PathVariable(value="id") String id) {
 
         HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.add("abc", "secret");
-        HttpEntity<String> httpEntity = new HttpEntity(id, httpHeaders);
-
-        String s1 = restTemplate.postForObject(server.buildURI("/games/"+id+"/leave1"),httpEntity, String.class);
-        return new ResponseEntity<>(s1, HttpStatus.OK);
+        httpHeaders.add("Secret",container.getSecreValue());
+        HttpEntity httpEntity=new HttpEntity(httpHeaders);
+        ResponseEntity<Void> responseEntity=restTemplate.postForEntity(server.buildURI("/games/"+id+"/leave1"),httpEntity,Void.class);
+        return responseEntity;
     }
 
 }
