@@ -37,7 +37,7 @@ public class GameInputController {
     @PostMapping("/games/{id}/round/actions")
     public ResponseEntity<Void> roundAction( @RequestBody RoundActionInputWrapper input, @RequestHeader(value = "Secret") String secret)throws IllegalAccessException{
         if (secret.equals(container.getSecreValue())) {
-            return new ResponseEntity<>(HttpStatus.OK);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } else {
             throw new IllegalAccessException(s);
         }
