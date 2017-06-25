@@ -4,7 +4,8 @@ package game.entity;
  * Holds the position of the bots
  */
 public class Position {
-
+    private int x;
+    private int y;
 
     public int getX() {
 
@@ -23,6 +24,4 @@ public class Position {
         this.y = y;
     }
 
-    private int x;
-    private int y;
 }
