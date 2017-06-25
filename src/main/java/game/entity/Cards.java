@@ -1,4 +1,4 @@
-package game.Entity;
+package game.entity;
 
 /**
  * Cards provided by server toplayer for movement of robots

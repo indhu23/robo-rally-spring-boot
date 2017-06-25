@@ -1,8 +1,8 @@
 package game.controller;
 
 import game.Application;
-import game.Entity.*;
 import game.exception.IllegalAccessException;
+import game.entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -26,6 +26,8 @@ public class GameOutputController {
 
     @Autowired
     private SecretContainer container;
+    private String key="Secret";
+    private String g= "games/";
 
     /**
      * This method is used to get the list available games from the server
@@ -33,7 +35,7 @@ public class GameOutputController {
      */
     @GetMapping("/games/list")
     public List<GameViewOutputWrapper> getGameList() {
-        return restTemplate.getForEntity(server.buildURI("/games/list1"),wrapper.class).getBody().getGames();
+        return restTemplate.getForEntity(server.buildURI("/games/list1"),Wrapper.class).getBody().getGames();
     }
 
     /**
@@ -43,12 +45,12 @@ public class GameOutputController {
      * @return String This contains the status of the request
      */
     @PostMapping("/games/{id}/join")
-    public String joinGame(@PathVariable String id,@RequestBody GameJoinInputWrapper joinGame) throws IllegalAccessException{
-        ResponseEntity<Void> input= restTemplate.postForEntity(server.buildURI("/games/"+id+"/join1"),joinGame,Void.class);
-        String SecretHeader=input.getHeaders().containsKey("Secret")?input.getHeaders().getFirst("Secret"):"";
+
+    public String joinGame(@PathVariable String id,@RequestBody GameJoinInputWrapper joinGame) throws IllegalAccessException {
+        ResponseEntity<Void> input= restTemplate.postForEntity(server.buildURI(g+id+"/join1"),joinGame,Void.class);
+        String SecretHeader=input.getHeaders().containsKey(key)?input.getHeaders().getFirst(key):"";
         if(SecretHeader !=null || SecretHeader == "") {
-            container.setSecreValue(input.getHeaders().getFirst("Secret"));
-            System.out.println("value" + container.getSecreValue());
+            container.setSecreValue(input.getHeaders().getFirst(key));
             int status = input.getStatusCodeValue();
             switch (status) {
                 case 200:
@@ -76,7 +78,7 @@ public class GameOutputController {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Secret", container.getSecreValue());
         HttpEntity request = new HttpEntity(register, headers);
-        ResponseEntity<Void> input= restTemplate.postForEntity(server.buildURI("/games/"+id+"/round/sendRegisters1"),request,Void.class);
+        ResponseEntity<Void> input= restTemplate.postForEntity(server.buildURI(g+id+"/round/sendRegisters1"),request,Void.class);
         int status= input.getStatusCodeValue();
         switch (status){
             case 204 : return "Successfully sent the registers";
@@ -104,7 +106,7 @@ public class GameOutputController {
     public ResponseEntity<Void> leaveTheGame(@PathVariable(value="id") String id) {
 
         HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.add("Secret",container.getSecreValue());
+        httpHeaders.add(key,container.getSecreValue());
         HttpEntity httpEntity=new HttpEntity(httpHeaders);
         return restTemplate.postForEntity(server.buildURI("/games/"+id+"/leave1"),httpEntity,Void.class);
     }

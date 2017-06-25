@@ -1,4 +1,4 @@
-package game.Entity;
+package game.entity;
 
 /**
  * Holds details about the player positions

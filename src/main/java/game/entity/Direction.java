@@ -1,4 +1,4 @@
-package game.Entity;
+package game.entity;
 
 /**
  * Created by Anand on 5/30/2017.
