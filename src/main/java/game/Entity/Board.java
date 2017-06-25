@@ -1,25 +1,37 @@
 package game.Entity;
 
-import java.util.List;
-
+/**
+ * Created by Anand on 5/30/2017.
+ */
 public class Board {
-    private BoardSize size;
+    Size size;
+    Fields []fields;
 
-    public BoardSize getSize() {
+    public Size getSize() {
         return size;
     }
 
-    public void setSize(BoardSize size) {
+    /**
+     * set the size of the board (length*width)
+     * @param size
+     */
+    public void setSize(Size size) {
         this.size = size;
     }
 
-    public List<BoardPosition> getPosition() {
-        return position;
+    /**
+     *
+     * @return returns the description of all fileds in the board
+     */
+    public Fields[] getFields() {
+        return fields;
     }
 
-    public void setPosition(List<BoardPosition> position) {
-        this.position = position;
+    /**
+     * set the description of all fields in the board
+     * @param fields
+     */
+    public void setFields(Fields[] fields) {
+        this.fields = fields;
     }
-
-    private List<BoardPosition> position;
 }

@@ -1,5 +1,6 @@
 package game.controller;
 
+import game.Entity.Game;
 import game.Entity.GameViewOutputWrapper;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -27,5 +28,19 @@ public class GameMockServer {
     public ResponseEntity<Void> sendRegisterServer(){
         HttpHeaders headers = new HttpHeaders();
         return new ResponseEntity<Void>(headers,HttpStatus.OK);
+    }
+    @PostMapping("/games/create1")
+    public GameViewOutputWrapper newGame(@RequestBody Game game) {
+        GameViewOutputWrapper gameViewOutputWrapper=new GameViewOutputWrapper();
+        gameViewOutputWrapper.setId("dDSG");
+        gameViewOutputWrapper.setMaxRobotCount(5);
+        gameViewOutputWrapper.setCurrentRobotCount(0);
+        gameViewOutputWrapper.setName("sdgvdf");
+        return gameViewOutputWrapper;
+    }
+    @PostMapping("/games/{id}/leave1")
+    public ResponseEntity<String> clientLeaveGame(@RequestBody String id) {
+        String s= "the client left the game";
+        return new ResponseEntity<>(s,HttpStatus.OK);
     }
 }

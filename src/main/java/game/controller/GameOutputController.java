@@ -5,6 +5,7 @@ import game.Entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
@@ -43,6 +44,24 @@ public class GameOutputController {
         ResponseEntity<Void> input= restTemplate.postForEntity(server.buildURI("/games/"+id+"/join1"),request,Void.class);
         return (new GameJoinOutputWrapper(input.getStatusCodeValue()));
     }
+    @PostMapping("/games/create")
+    public GameViewOutputWrapper createGame(@RequestBody Game game ){
+        System.out.println("here");
+
+        return restTemplate.postForObject(server.buildURI("/games/create1"), game, GameViewOutputWrapper.class);
+    }
+
+    @PostMapping("/games/{id}/leave")
+    public ResponseEntity<String> leaveTheGame(@PathVariable(value="id") String id) {
+
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.add("abc", "secret");
+        HttpEntity<String> httpEntity = new HttpEntity(id, httpHeaders);
+
+        String s1 = restTemplate.postForObject(server.buildURI("/games/"+id+"/leave1"),httpEntity, String.class);
+        return new ResponseEntity<>(s1, HttpStatus.OK);
+    }
+
 }
 
 
