@@ -3,6 +3,7 @@ package game.controller;
 import game.Entity.GameJoinInputWrapper;
 import game.Entity.GameJoinOutputWrapper;
 import game.Entity.GameViewOutputWrapper;
+import game.Entity.SendRegisterInputWrapper;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,6 +15,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.client.ExpectedCount;
 import org.springframework.test.web.client.MockRestServiceServer;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.Arrays;
 import java.util.List;
 import static org.junit.Assert.*;
 import static org.springframework.http.HttpMethod.GET;
@@ -57,17 +60,24 @@ public class GameOutputControllerTest {
 
     @Test
     public void joinGame() throws Exception {
-        mockRestServiceServer.expect(times(5),
+        mockRestServiceServer.expect(
                 requestTo("http://localhost:8080/games/1/join1"))
                 .andExpect(method(HttpMethod.POST))
                 .andRespond(withStatus(HttpStatus.valueOf(200)));
-        String input=controller.joinGame("1",new GameJoinInputWrapper("mike","http://10.1.11.101:8080/rest/"));
+        String input= controller.joinGame("1",new GameJoinInputWrapper("mike","http://10.1.11.101:8080/rest/"));
         assertEquals("Successfully joined game",input);
         mockRestServiceServer.verify();
     }
 
     @Test
     public void sendRegister() throws Exception {
+        mockRestServiceServer.expect(
+                requestTo("http://localhost:8080/games/1/round/sendRegisters1"))
+                .andExpect(method(HttpMethod.POST))
+                .andRespond(withStatus(HttpStatus.valueOf(204)));
+        String input=controller.sendRegisters("1",new SendRegisterInputWrapper(Arrays.asList("MOVE1","MOVE2","UTURN")));
+        assertEquals("Successfully sent the registers",input);
+        mockRestServiceServer.verify();
     }
 
 }
