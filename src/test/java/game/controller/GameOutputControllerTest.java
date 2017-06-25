@@ -1,9 +1,6 @@
 package game.controller;
 
-import game.Entity.GameJoinInputWrapper;
-import game.Entity.GameJoinOutputWrapper;
-import game.Entity.GameViewOutputWrapper;
-import game.Entity.SendRegisterInputWrapper;
+import game.Entity.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -80,11 +77,19 @@ public class GameOutputControllerTest {
 
     @Test
     public void createGame() throws Exception {
-//        String responseBody="{\"id\": \"haam\",\"name\":\"hi\",\"maxRobotCount\":6,\"currentRobotCount\":1}";
-//        mockRestServiceServer.expect(
-//                requestTo("http://localhost:8080/games/1/round/sendRegisters1"))
-//                .andExpect(method(HttpMethod.POST))
-//                .andRespond(withSuccess(responseBody,APPLICATION_JSON));
+        String responseBody="{\"id\": \"11\",\"name\":\"max\",\"maxRobotCount\":6,\"currentRobotCount\":1}";
+        mockRestServiceServer.expect(
+                requestTo("http://localhost:8080/games/create1"))
+                .andExpect(method(HttpMethod.POST))
+                .andRespond(withSuccess(responseBody,APPLICATION_JSON));
+        Game game=new Game();
+        game.setName("max");
+        game.setMaxRobotCount(3);
+        ResponseEntity<GameViewOutputWrapper> output= controller.createGame(game);
+        assertEquals("max",output.getBody().getName());
+        assertEquals("11",output.getBody().getId());
+        assertEquals(6,output.getBody().getMaxRobotCount());
+        assertEquals(1,output.getBody().getCurrentRobotCount());
     }
 
     @Test
@@ -93,7 +98,7 @@ public class GameOutputControllerTest {
                 requestTo("http://localhost:8080/games/1/leave1"))
                 .andExpect(method(HttpMethod.POST))
                 .andRespond(withStatus(HttpStatus.valueOf(200)));
-        ResponseEntity<String> output = controller.leaveTheGame("1");
+        ResponseEntity<Void> output = controller.leaveTheGame("1");
         assertEquals(200,output.getStatusCodeValue());
         mockRestServiceServer.verify();
     }
