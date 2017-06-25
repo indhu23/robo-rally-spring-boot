@@ -48,8 +48,8 @@ public class GameOutputController {
 
     public String joinGame(@PathVariable String id,@RequestBody GameJoinInputWrapper joinGame) throws IllegalAccessException {
         ResponseEntity<Void> input= restTemplate.postForEntity(server.buildURI(g+id+"/join1"),joinGame,Void.class);
-        String SecretHeader=input.getHeaders().containsKey(key)?input.getHeaders().getFirst(key):"";
-        if(SecretHeader !=null || SecretHeader == "") {
+        String secretHeader=input.getHeaders().containsKey(key)?input.getHeaders().getFirst(key):"";
+        if(secretHeader !=null || secretHeader == "") {
             container.setSecreValue(input.getHeaders().getFirst(key));
             int status = input.getStatusCodeValue();
             switch (status) {

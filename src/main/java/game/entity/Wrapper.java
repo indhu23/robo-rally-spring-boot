@@ -1,8 +1,6 @@
 package game.entity;
 import java.util.List;
 
-import java.util.List;
-
 /**
  * Wrapper for holding list of games
  */
