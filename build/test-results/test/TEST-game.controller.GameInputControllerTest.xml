@@ -1,53 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="game.controller.GameInputControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-06-25T09:10:46" hostname="Indhu-PC" time="1.259">
+<testsuite name="game.controller.GameInputControllerTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2017-06-25T17:57:31" hostname="Indhu-PC" time="1.352">
   <properties/>
-  <testcase name="startGame" classname="game.controller.GameInputControllerTest" time="1.259"/>
-  <system-out><![CDATA[11:10:34.859 [Test worker] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class game.controller.GameInputControllerTest]
-11:10:34.870 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-11:10:34.901 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-11:10:34.963 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [game.controller.GameInputControllerTest] from class [org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper]
-11:10:35.081 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [game.controller.GameInputControllerTest], using SpringBootContextLoader
-11:10:35.105 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [game.controller.GameInputControllerTest]: class path resource [game/controller/GameInputControllerTest-context.xml] does not exist
-11:10:35.108 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [game.controller.GameInputControllerTest]: class path resource [game/controller/GameInputControllerTestContext.groovy] does not exist
-11:10:35.111 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [game.controller.GameInputControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-11:10:35.115 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [game.controller.GameInputControllerTest]: GameInputControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-11:10:35.512 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [game.controller.GameInputControllerTest]
-11:10:35.543 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
-11:10:35.543 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
-11:10:35.543 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
-11:10:35.584 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved classpath location [game/controller/] to resources [URL [file:/C:/Users/Indhu/IdeaProjects/rr_group_v/build/classes/test/game/controller/], URL [file:/C:/Users/Indhu/IdeaProjects/rr_group_v/build/classes/main/game/controller/]]
-11:10:35.586 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\test\game\controller]
-11:10:35.590 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\test\game\controller] for files matching pattern [C:/Users/Indhu/IdeaProjects/rr_group_v/build/classes/test/game/controller/*.class]
-11:10:35.604 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\main\game\controller]
-11:10:35.606 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\main\game\controller] for files matching pattern [C:/Users/Indhu/IdeaProjects/rr_group_v/build/classes/main/game/controller/*.class]
-11:10:35.612 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved location pattern [classpath*:game/controller/*.class] to resources [file [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\test\game\controller\GameInputControllerTest.class], file [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\test\game\controller\GameOutputControllerTest.class], file [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\main\game\controller\GameInputController.class], file [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\main\game\controller\GameMockServer.class], file [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\main\game\controller\GameOutputController.class], file [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\main\game\controller\SecretContainer.class]]
-11:10:35.724 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved classpath location [game/] to resources [URL [file:/C:/Users/Indhu/IdeaProjects/rr_group_v/build/classes/test/game/], URL [file:/C:/Users/Indhu/IdeaProjects/rr_group_v/build/classes/main/game/]]
-11:10:35.728 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\test\game]
-11:10:35.731 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\test\game] for files matching pattern [C:/Users/Indhu/IdeaProjects/rr_group_v/build/classes/test/game/*.class]
-11:10:35.735 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\main\game]
-11:10:35.737 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\main\game] for files matching pattern [C:/Users/Indhu/IdeaProjects/rr_group_v/build/classes/main/game/*.class]
-11:10:35.742 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved location pattern [classpath*:game/*.class] to resources [file [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\main\game\Application$URIBuilder.class], file [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\main\game\Application.class]]
-11:10:35.817 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\main\game\Application.class]
-11:10:35.821 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration game.Application for test class game.controller.GameInputControllerTest
-11:10:35.832 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - @TestExecutionListeners is not present for class [game.controller.GameInputControllerTest]: using defaults.
-11:10:35.854 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-11:10:35.918 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Could not instantiate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
-11:10:35.918 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Could not instantiate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
-11:10:35.918 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@35c058b6, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@214186fa, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@3f3409fd, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3ebf4e51, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@90da4d8, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@24569555, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@3b321bc3, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@7f3b0732, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@1bf44769, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@b18957f]
-11:10:35.934 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [game.controller.GameInputControllerTest]
-11:10:35.934 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [game.controller.GameInputControllerTest]
-11:10:35.950 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [game.controller.GameInputControllerTest]
-11:10:35.950 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [game.controller.GameInputControllerTest]
-11:10:35.965 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@562d2dd3 testClass = GameInputControllerTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@2c90dc62 testClass = GameInputControllerTest, locations = '{}', classes = '{class game.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@67e91c16 key = [Package Import game.controller, org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.context.MessageSourceAutoConfiguration, org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration, org.springframework.boot.autoconfigure.groovy.template.GroovyTemplateAutoConfiguration, org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration, org.springframework.boot.autoconfigure.hateoas.HypermediaAutoConfiguration, org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration, org.springframework.boot.autoconfigure.mustache.MustacheAutoConfiguration, org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration, org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration, org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration, org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration, org.springframework.boot.autoconfigure.web.ServerPropertiesAutoConfiguration, org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@23796292, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@5df151d5, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@c19e90be, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@c82054a4, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@612fd330], resourceBasePath = '', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]], class annotated with @DirtiesContext [false] with mode [null].
-11:10:35.965 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [game.controller.GameInputControllerTest]
-11:10:35.965 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [game.controller.GameInputControllerTest]
-11:10:35.981 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@562d2dd3 testClass = GameInputControllerTest, testInstance = game.controller.GameInputControllerTest@1ee502d7, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@2c90dc62 testClass = GameInputControllerTest, locations = '{}', classes = '{class game.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@67e91c16 key = [Package Import game.controller, org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.context.MessageSourceAutoConfiguration, org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration, org.springframework.boot.autoconfigure.groovy.template.GroovyTemplateAutoConfiguration, org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration, org.springframework.boot.autoconfigure.hateoas.HypermediaAutoConfiguration, org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration, org.springframework.boot.autoconfigure.mustache.MustacheAutoConfiguration, org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration, org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration, org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration, org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration, org.springframework.boot.autoconfigure.web.ServerPropertiesAutoConfiguration, org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@23796292, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@5df151d5, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@c19e90be, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@c82054a4, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@612fd330], resourceBasePath = '', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]].
-11:10:36.267 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
-11:10:36.268 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
-11:10:36.269 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
-11:10:36.274 [Test worker] DEBUG org.springframework.core.env.MutablePropertySources - Adding [inline] PropertySource with highest search precedence
-11:10:36.294 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper=true, server.port=-1}
-11:10:36.296 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [Inlined Test Properties] PropertySource with highest search precedence
+  <testcase name="startGame" classname="game.controller.GameInputControllerTest" time="1.058"/>
+  <testcase name="endGame" classname="game.controller.GameInputControllerTest" time="0.049"/>
+  <testcase name="startRound" classname="game.controller.GameInputControllerTest" time="0.05"/>
+  <testcase name="roundAction" classname="game.controller.GameInputControllerTest" time="0.094"/>
+  <testcase name="timeLimit" classname="game.controller.GameInputControllerTest" time="0.06"/>
+  <testcase name="endRound" classname="game.controller.GameInputControllerTest" time="0.018"/>
+  <system-out><![CDATA[19:57:18.612 [Test worker] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class game.controller.GameInputControllerTest]
+19:57:18.643 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+19:57:18.683 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+19:57:18.733 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [game.controller.GameInputControllerTest] from class [org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper]
+19:57:18.879 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [game.controller.GameInputControllerTest], using SpringBootContextLoader
+19:57:18.904 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [game.controller.GameInputControllerTest]: class path resource [game/controller/GameInputControllerTest-context.xml] does not exist
+19:57:18.907 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [game.controller.GameInputControllerTest]: class path resource [game/controller/GameInputControllerTestContext.groovy] does not exist
+19:57:18.909 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [game.controller.GameInputControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+19:57:18.914 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [game.controller.GameInputControllerTest]: GameInputControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+19:57:19.285 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [game.controller.GameInputControllerTest]
+19:57:19.318 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+19:57:19.319 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+19:57:19.320 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+19:57:19.360 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved classpath location [game/controller/] to resources [URL [file:/C:/Users/Indhu/IdeaProjects/rr_group_v/build/classes/test/game/controller/], URL [file:/C:/Users/Indhu/IdeaProjects/rr_group_v/build/classes/main/game/controller/]]
+19:57:19.362 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\test\game\controller]
+19:57:19.365 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\test\game\controller] for files matching pattern [C:/Users/Indhu/IdeaProjects/rr_group_v/build/classes/test/game/controller/*.class]
+19:57:19.381 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\main\game\controller]
+19:57:19.383 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\main\game\controller] for files matching pattern [C:/Users/Indhu/IdeaProjects/rr_group_v/build/classes/main/game/controller/*.class]
+19:57:19.390 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved location pattern [classpath*:game/controller/*.class] to resources [file [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\test\game\controller\GameInputControllerTest.class], file [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\test\game\controller\GameOutputControllerTest.class], file [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\main\game\controller\GameInputController.class], file [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\main\game\controller\GameMockServer.class], file [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\main\game\controller\GameOutputController.class], file [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\main\game\controller\SecretContainer.class]]
+19:57:19.545 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved classpath location [game/] to resources [URL [file:/C:/Users/Indhu/IdeaProjects/rr_group_v/build/classes/test/game/], URL [file:/C:/Users/Indhu/IdeaProjects/rr_group_v/build/classes/main/game/]]
+19:57:19.562 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\test\game]
+19:57:19.565 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\test\game] for files matching pattern [C:/Users/Indhu/IdeaProjects/rr_group_v/build/classes/test/game/*.class]
+19:57:19.571 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\main\game]
+19:57:19.573 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\main\game] for files matching pattern [C:/Users/Indhu/IdeaProjects/rr_group_v/build/classes/main/game/*.class]
+19:57:19.581 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved location pattern [classpath*:game/*.class] to resources [file [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\main\game\Application$URIBuilder.class], file [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\main\game\Application.class]]
+19:57:19.665 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\Indhu\IdeaProjects\rr_group_v\build\classes\main\game\Application.class]
+19:57:19.669 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration game.Application for test class game.controller.GameInputControllerTest
+19:57:19.678 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - @TestExecutionListeners is not present for class [game.controller.GameInputControllerTest]: using defaults.
+19:57:19.700 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+19:57:19.769 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Could not instantiate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+19:57:19.774 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Could not instantiate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+19:57:19.776 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@207979b4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7504472a, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@16ee4fe2, org.springframework.test.context.support.DirtiesContextTestExecutionListener@295ffa6c, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4280822a, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@156ab047, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@719f7c57, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@27456492, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@61122382, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@21ba5f6f]
+19:57:19.795 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [game.controller.GameInputControllerTest]
+19:57:19.799 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [game.controller.GameInputControllerTest]
+19:57:19.803 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [game.controller.GameInputControllerTest]
+19:57:19.804 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [game.controller.GameInputControllerTest]
+19:57:19.838 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@29ccd98b testClass = GameInputControllerTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@3d3ce91 testClass = GameInputControllerTest, locations = '{}', classes = '{class game.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@6769b9e7 key = [Package Import game.controller, org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.context.MessageSourceAutoConfiguration, org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration, org.springframework.boot.autoconfigure.groovy.template.GroovyTemplateAutoConfiguration, org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration, org.springframework.boot.autoconfigure.hateoas.HypermediaAutoConfiguration, org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration, org.springframework.boot.autoconfigure.mustache.MustacheAutoConfiguration, org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration, org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration, org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration, org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration, org.springframework.boot.autoconfigure.web.ServerPropertiesAutoConfiguration, org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6689532a, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@1eccd716, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@a805dd5a, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@f8bb207f, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@3324be6e], resourceBasePath = '', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]], class annotated with @DirtiesContext [false] with mode [null].
+19:57:19.881 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [game.controller.GameInputControllerTest]
+19:57:19.888 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [game.controller.GameInputControllerTest]
+19:57:19.899 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@29ccd98b testClass = GameInputControllerTest, testInstance = game.controller.GameInputControllerTest@520c9b3b, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@3d3ce91 testClass = GameInputControllerTest, locations = '{}', classes = '{class game.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@6769b9e7 key = [Package Import game.controller, org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.context.MessageSourceAutoConfiguration, org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration, org.springframework.boot.autoconfigure.groovy.template.GroovyTemplateAutoConfiguration, org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration, org.springframework.boot.autoconfigure.hateoas.HypermediaAutoConfiguration, org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration, org.springframework.boot.autoconfigure.mustache.MustacheAutoConfiguration, org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration, org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration, org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration, org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration, org.springframework.boot.autoconfigure.web.ServerPropertiesAutoConfiguration, org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6689532a, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@1eccd716, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@a805dd5a, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@f8bb207f, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@3324be6e], resourceBasePath = '', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]].
+19:57:20.234 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+19:57:20.234 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+19:57:20.250 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+19:57:20.250 [Test worker] DEBUG org.springframework.core.env.MutablePropertySources - Adding [inline] PropertySource with highest search precedence
+19:57:20.291 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper=true, server.port=-1}
+19:57:20.293 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [Inlined Test Properties] PropertySource with highest search precedence
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -57,38 +62,42 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v1.5.3.RELEASE)
 
-2017-06-25 11:10:37.684  INFO 7480 --- [    Test worker] game.controller.GameInputControllerTest  : Starting GameInputControllerTest on Indhu-PC with PID 7480 (started by Indhu in C:\Users\Indhu\IdeaProjects\rr_group_v)
-2017-06-25 11:10:37.684  INFO 7480 --- [    Test worker] game.controller.GameInputControllerTest  : No active profile set, falling back to default profiles: default
-2017-06-25 11:10:38.815  INFO 7480 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@3f8bfd80: startup date [Sun Jun 25 11:10:38 CEST 2017]; root of context hierarchy
-2017-06-25 11:10:43.511  INFO 7480 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@3f8bfd80: startup date [Sun Jun 25 11:10:38 CEST 2017]; root of context hierarchy
-2017-06-25 11:10:43.792  INFO 7480 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/games/{id}/round/actions],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> game.controller.GameInputController.startGame(java.lang.String,game.Entity.RoundActionInputWrapper,java.lang.String)
-2017-06-25 11:10:43.800  INFO 7480 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-2017-06-25 11:10:43.801  INFO 7480 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2017-06-25 11:10:43.948  INFO 7480 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2017-06-25 11:10:43.948  INFO 7480 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2017-06-25 11:10:44.158  INFO 7480 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2017-06-25 11:10:44.338  WARN 7480 --- [    Test worker] .t.AbstractTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2017-06-25 11:10:46.058  INFO 7480 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
-2017-06-25 11:10:46.058  INFO 7480 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
-2017-06-25 11:10:46.131  INFO 7480 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 73 ms
-2017-06-25 11:10:46.480  INFO 7480 --- [    Test worker] game.controller.GameInputControllerTest  : Started GameInputControllerTest in 10.138 seconds (JVM running for 14.654)
+2017-06-25 19:57:21.841  INFO 6296 --- [    Test worker] game.controller.GameInputControllerTest  : Starting GameInputControllerTest on Indhu-PC with PID 6296 (started by Indhu in C:\Users\Indhu\IdeaProjects\rr_group_v)
+2017-06-25 19:57:21.845  INFO 6296 --- [    Test worker] game.controller.GameInputControllerTest  : No active profile set, falling back to default profiles: default
+2017-06-25 19:57:23.251  INFO 6296 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1032e00f: startup date [Sun Jun 25 19:57:23 CEST 2017]; root of context hierarchy
+2017-06-25 19:57:29.124  INFO 6296 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@1032e00f: startup date [Sun Jun 25 19:57:23 CEST 2017]; root of context hierarchy
+2017-06-25 19:57:29.448  INFO 6296 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/games/{id}/round/actions],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> game.controller.GameInputController.roundAction(java.lang.String,game.Entity.RoundActionInputWrapper,java.lang.String) throws game.exception.IllegalAccessException
+2017-06-25 19:57:29.450  INFO 6296 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/games/{id}/round/ends],methods=[POST],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<org.springframework.http.HttpStatus> game.controller.GameInputController.endRound(java.lang.String,java.lang.String) throws game.exception.IllegalAccessException
+2017-06-25 19:57:29.450  INFO 6296 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/games/{id}/round/start],methods=[POST],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> game.controller.GameInputController.startRound(java.lang.String,game.Entity.Player,java.lang.String) throws game.exception.IllegalAccessException
+2017-06-25 19:57:29.450  INFO 6296 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/games/{id}/end],methods=[POST]}" onto public org.springframework.http.ResponseEntity<org.springframework.http.HttpStatus> game.controller.GameInputController.endGame(java.lang.String,java.lang.String,java.lang.String) throws game.exception.IllegalAccessException
+2017-06-25 19:57:29.450  INFO 6296 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/games/{id}/round/timeLimitWarning],methods=[POST],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<org.springframework.http.HttpStatus> game.controller.GameInputController.timeLimit(java.lang.String,game.Entity.TimeLimitWarning,java.lang.String) throws game.exception.IllegalAccessException
+2017-06-25 19:57:29.450  INFO 6296 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/games/{id}/start],methods=[POST]}" onto public game.Entity.RobotPositionClientRespond game.controller.GameInputController.startGame(game.Entity.BoardLayout,java.lang.String,java.lang.String) throws game.exception.IllegalAccessException
+2017-06-25 19:57:29.450  INFO 6296 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-06-25 19:57:29.450  INFO 6296 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-06-25 19:57:29.623  INFO 6296 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-06-25 19:57:29.624  INFO 6296 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-06-25 19:57:29.830  INFO 6296 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-06-25 19:57:31.466  INFO 6296 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2017-06-25 19:57:31.466  INFO 6296 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2017-06-25 19:57:31.507  INFO 6296 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 41 ms
+2017-06-25 19:57:31.735  INFO 6296 --- [    Test worker] game.controller.GameInputControllerTest  : Started GameInputControllerTest in 11.388 seconds (JVM running for 16.293)
 
 MockHttpServletRequest:
       HTTP Method = POST
-      Request URI = /games/1/round/actions
+      Request URI = /games/EFE/start
        Parameters = {}
-          Headers = {Content-Type=[application/json]}
+          Headers = {Content-Type=[application/json], Secret=[secretValue]}
 
 Handler:
              Type = game.controller.GameInputController
-           Method = public org.springframework.http.ResponseEntity<java.lang.Void> game.controller.GameInputController.startGame(java.lang.String,game.Entity.RoundActionInputWrapper,java.lang.String)
+           Method = public game.Entity.RobotPositionClientRespond game.controller.GameInputController.startGame(game.Entity.BoardLayout,java.lang.String,java.lang.String) throws game.exception.IllegalAccessException
 
 Async:
     Async started = false
      Async result = null
 
 Resolved Exception:
-             Type = org.springframework.web.bind.ServletRequestBindingException
+             Type = null
 
 ModelAndView:
         View name = null
@@ -99,8 +108,184 @@ FlashMap:
        Attributes = null
 
 MockHttpServletResponse:
-           Status = 400
-    Error message = Missing request header 'Secret' for method parameter of type String
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8]}
+     Content type = application/json;charset=UTF-8
+             Body = {"robot":"HAMMERBOT","position":{"x":1,"y":0}}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /games/FSDF/end
+       Parameters = {}
+          Headers = {Content-Type=[text/plain], Secret=[secretValue]}
+
+Handler:
+             Type = game.controller.GameInputController
+           Method = public org.springframework.http.ResponseEntity<org.springframework.http.HttpStatus> game.controller.GameInputController.endGame(java.lang.String,java.lang.String,java.lang.String) throws game.exception.IllegalAccessException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 204
+    Error message = null
+          Headers = {}
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /games/DSFD/round/start
+       Parameters = {}
+          Headers = {Content-Type=[application/json], Secret=[secretValue]}
+
+Handler:
+             Type = game.controller.GameInputController
+           Method = public org.springframework.http.ResponseEntity<java.lang.Void> game.controller.GameInputController.startRound(java.lang.String,game.Entity.Player,java.lang.String) throws game.exception.IllegalAccessException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 204
+    Error message = null
+          Headers = {}
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+input: secretValue
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /games/1/round/actions
+       Parameters = {}
+          Headers = {Content-Type=[application/json], Secret=[secretValue]}
+
+Handler:
+             Type = game.controller.GameInputController
+           Method = public org.springframework.http.ResponseEntity<java.lang.Void> game.controller.GameInputController.roundAction(java.lang.String,game.Entity.RoundActionInputWrapper,java.lang.String) throws game.exception.IllegalAccessException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {}
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /games/FSDF/round/timeLimitWarning
+       Parameters = {}
+          Headers = {Content-Type=[application/json], Secret=[secretValue]}
+
+Handler:
+             Type = game.controller.GameInputController
+           Method = public org.springframework.http.ResponseEntity<org.springframework.http.HttpStatus> game.controller.GameInputController.timeLimit(java.lang.String,game.Entity.TimeLimitWarning,java.lang.String) throws game.exception.IllegalAccessException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 204
+    Error message = null
+          Headers = {}
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /games/ANCDEF/round/ends
+       Parameters = {}
+          Headers = {Secret=[secretValue]}
+
+Handler:
+             Type = game.controller.GameInputController
+           Method = public org.springframework.http.ResponseEntity<org.springframework.http.HttpStatus> game.controller.GameInputController.endRound(java.lang.String,java.lang.String) throws game.exception.IllegalAccessException
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 204
+    Error message = null
           Headers = {}
      Content type = null
              Body = 
